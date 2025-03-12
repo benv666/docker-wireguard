@@ -72,7 +72,7 @@ DUDE"
                 # add peer info to server conf with presharedkey
                 cat <<DUDE >> /config/wg_confs/wg0.conf
 [Peer]
-# ${PEER_ID}
+# friendly_name=${PEER_ID}
 PublicKey = $(cat "/config/${PEER_ID}/publickey-${PEER_ID}")
 PresharedKey = $(cat "/config/${PEER_ID}/presharedkey-${PEER_ID}")
 DUDE
@@ -86,7 +86,7 @@ DUDE"
                 # add peer info to server conf without presharedkey
                 cat <<DUDE >> /config/wg_confs/wg0.conf
 [Peer]
-# ${PEER_ID}
+# friendly_name=${PEER_ID}
 PublicKey = $(cat "/config/${PEER_ID}/publickey-${PEER_ID}")
 DUDE
             fi
